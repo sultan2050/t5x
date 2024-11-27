@@ -1,0 +1,19 @@
+# Register necessary SeqIO Tasks/Mixtures.
+from __gin__ import dynamic_registration
+import t5.data.mixtures
+import __main__ as train_script
+
+
+include '/home/big35manf/t5x/clinc_t5/base.gin'
+include '/home/big35manf/t5x/t5x/configs/runs/pretrain.gin'
+
+
+MIXTURE_OR_TASK_NAME = "arabic_dataset"
+TASK_FEATURE_LENGTHS = {"inputs": 512, "targets": 114}
+TRAIN_STEPS = 1000000
+DROPOUT_RATE = 0.0
+BATCH_SIZE = 256
+
+
+train_script.train:
+  eval_period = 5000

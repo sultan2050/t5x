@@ -1,0 +1,5 @@
+from __gin__ import dynamic_registration
+import tasks
+
+include "/home/big35manf/t5x/clinc_t5/config.gin"
+MIXTURE_OR_TASK_NAME = "arabic_dataset"
