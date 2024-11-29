@@ -15,7 +15,7 @@ output_features = {
 #source=seqio.TfdsDataSource(tfds_name='wikipedia/20230601.ar:1.0.0'),
 def arabic_dataset(split, shuffle_files = False):
     del shuffle_files
-    files_name_pmc =  list(map(lambda x: x.strip(), subprocess.run(['gsutil', 'ls', 'gs://sultan-t5x/kenlm4gb_mimic_corpora/*.txt'], stdout=subprocess.PIPE).stdout.splitlines()))
+    files_name_pmc =  list(map(lambda x: x.strip(), subprocess.run(['gsutil', 'ls', 'gs://sultan-t5x/similar_8gb_corpora/*.txt'], stdout=subprocess.PIPE).stdout.splitlines()))
     shuffle(files_name_pmc)
 
     print(files_name_pmc[0])
